@@ -8,16 +8,21 @@ body {
 	font-family: 'Roboto Mono', monospace;
 	font-size: medium;
 	color: rgba(0,0,0,0.77);
-	background: #F5F5F5;
-	margin: 100px 112px 112px 100px;
+	background: #FAFAFA;
+	margin-right:100px;
 }
 
+p {
+	display: block;
+	height: 100px;
+
+}
 nav#sidebar {
 	position: fixed;
 	top: 0; right: 0;
 	height: 100%;
 	width: 100px;
-	background: #F5F5F5;
+	background: #FAFAFA;
 }
 
 nav#bottombar {
@@ -26,15 +31,36 @@ nav#bottombar {
 	bottom: 0; left: 0;
 	height: 100px;
 	width: 100%;
-	background: #F5F5F5;
+	background: #FAFAFA;
 }
 
-content#notes {
+div#note-container {
 	height: auto;
+	height: 100%;
 	width: 100%;
-	overflow: hidden;
+	padding: 74px 16px 116px 74px;
 }
 
+article.note-card {
+  background-color:	#2196F3;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 150px;
+  max-height: 400px;
+  margin: 24px;
+  padding: 32px;
+  position: relative;
+  width: 400px;
+  min-width: 200px;
+  max-width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+article.note-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 
 ul {
 	position: absolute;
@@ -135,7 +161,7 @@ ul {
   	opacity: 0;
   	transform: scale(0.8);
   	
-  	transition: 0.2s ease;
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   	z-index: -1;
 }
 .bt-bar:not(.btn-active):hover::after {

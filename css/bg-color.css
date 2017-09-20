@@ -1,0 +1,19 @@
+.bg-red			{	background-color:	#f44336 !important;	color:	rgba(255,255,255,1);		}
+.bg-pink		{	background-color:	#E91E63 !important;	color:	rgba(255,255,255,1);		}
+.bg-purple		{	background-color:	#9C27B0 !important;	color:	rgba(255,255,255,1);		}
+.bg-deep-purple	{	background-color:	#673AB7 !important;	color:	rgba(255,255,255,1);		}
+.bg-indigo		{	background-color:	#3F51B5 !important;	color:	rgba(255,255,255,1);		}
+.bg-blue		{	background-color:	#2196F3 !important;	color:	rgba(0, 0, 0, 0.77);		}
+.bg-light-blue	{	background-color:	#03A9F4 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-cyan		{	background-color:	#00BCD4 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-teal		{	background-color:	#009688 !important;	color:	rgba(255,255,255,1);		}
+.bg-green		{	background-color:	#4CAF50 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-light-green	{	background-color:	#8BC34A !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-lime		{	background-color:	#CDDC39 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-yellow		{	background-color:	#FFEB3B !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-amber		{	background-color:	#FFC107 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-orange		{	background-color:	#FF9800 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-deep-orange	{	background-color:	#FF5722 !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-brown		{	background-color:	#795548 !important;	color:	rgba(255,255,255,1);		}
+.bg-grey		{	background-color:	#9E9E9E !important;	color:	rgba(0 ,0 ,0 ,0.77);		}
+.bg-blue-grey	{	background-color:	#607D8B !important;	color:	rgba(255,255,255,1);		}
