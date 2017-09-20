@@ -5,8 +5,11 @@
 }
 
 body {
+	font-family: 'Roboto Mono', monospace;
+	font-size: medium;
+	color: rgba(0,0,0,0.77);
 	background: #F5F5F5;
-	margin-bottom: 125px;
+	margin: 100px 112px 112px 100px;
 }
 
 nav#sidebar {
@@ -14,16 +17,23 @@ nav#sidebar {
 	top: 0; right: 0;
 	height: 100%;
 	width: 100px;
-	background: blue;
+	background: #F5F5F5;
 }
 
-header#bottombar {
+nav#bottombar {
 	position: fixed;
+	overflow: hidden;
 	bottom: 0; left: 0;
 	height: 100px;
 	width: 100%;
-	background: green;
-} 
+	background: #F5F5F5;
+}
+
+content#notes {
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+}
 
 
 ul {
@@ -31,12 +41,70 @@ ul {
 	list-style-type: none;
 }
 
+.type-mono {
+	font-family: 'Roboto Mono', monospace;
+}
+
+.type-bold {
+	font-weight: 700;
+}
+
+#njs-text {
+	height: 100px;
+    display: inline-block;
+    line-height: 100px;
+	font-size: 32px;
+	color: #2196F3;
+}
+
 #add-note 	 {	background-image: url('../img/icon/add-icon.svg');		}
-#search-note {	background-image: url('../img/icon/search-icon.svg');	}
+#star-note 	 {	background-image: url('../img/icon/star-note.svg');		}
 #setting 	 {	background-image: url('../img/icon/setting-icon.svg');	}
+#search-note {
+	position: absolute;
+	background-image: url('../img/icon/search-icon.svg');
+	bottom: 0; right: 0;
+}
+
+#njs-icon {
+	position: relative;
+	background-image: url('../img/icon/note-logo.svg');
+	height: 100px;
+	width: 100px;
+	background-color: transparent;
+	background-size: 48px;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 32px;
+
+}
+
+#njs-icon::before {
+	content: "";
+	height: 100px;
+	width: 100px;
+	content: "";
+	position: absolute;
+	background: #2196F3;
+	height: 100px;
+	width: 100px;
+	z-index: -1;
+}
 .bt-sidebar {
 	display: block;
 }
+
+.bt-bottombar {
+	display: inline-block;
+	float: left;
+}
+
+.bottom-container {
+	height: 100%;
+}
+
+
+
 .bt-bar {
 	position: relative;
 	height: 100px;
@@ -47,6 +115,7 @@ ul {
 	background-size: 48px;
 	background-position: center;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 .bt-bar::after {
@@ -57,22 +126,21 @@ ul {
 	background-position: center;
 	background-repeat: no-repeat;
 	position: absolute;
-  	top: 0%;
-  	right: 0%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
   	height: 100px;
 	width: 100px;
   	opacity: 0;
   	transform: scale(0.8);
+  	
   	transition: 0.2s ease;
+  	z-index: -1;
 }
 .bt-bar:not(.btn-active):hover::after {
 	opacity: 1;
 	transform: scale(1);
-	cursor: pointer;
-}
-.bt-bar:not(.btn-active):active::after {
-	opacity: 0;
-	transform: scale(1.5);
 }
 
 .bt-active {
@@ -83,10 +151,6 @@ ul {
 	content: "";
 	position: absolute;
 	background: rgba(0,0,0,0.13);
-  	top: 0;
-  	right: 0;
-  	bottom: 0;
-  	left: 0;
 	height: 100px;
 	width: 100px;
 

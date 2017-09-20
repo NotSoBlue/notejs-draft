@@ -3,23 +3,44 @@
 <head>
 	<title>Icon Backdrop</title>
 </head>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <body>
+	<nav id="bottombar">
+		<div id="njs-icon" class="bt-bottombar"> </div>
+		<div id="njs-text" class="bottom-container type-bold"> NoteJS </div>
+	</nav>
 	<nav id="sidebar">
 		<ul>
-			<li id="setting" 	 class="bt-bar bt-sidebar" data-bt-name="add-note"> </li>
-			<li id="add-note" 	 class="bt-bar bt-sidebar" data-bt-name="add-note"> </li>
-			<li id="search-note" class="bt-bar bt-sidebar" data-bt-name="add-note"> </li>
-
+			<li id="setting" 	 class="bt-bar bt-sidebar" data-bt-name="setting"> 		</li>
+			<li id="add-note" 	 class="bt-bar bt-sidebar" data-bt-name="add-note">		</li>
+			<li id="star-note" 	 class="bt-bar bt-sidebar" data-bt-name="star-note"> 	</li>
 		</ul>
+		<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"> </button>
 	</nav>
-	<header id="bottombar">
+
+	<content id="notes">
 		
-	</header>
+	</content>
 
 <!--
 	<button id="add-note" class="bt-bar bt-sidebar bt-active" data-bt-name="add-note"></button>
 	<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"></button>
 -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script>
+
+$(function(){
+	$(".bt-bar:not(.bt-active):not(#search-note)").on('click', function(){
+						method = $(this).attr("data-bt-name");
+						$(this).siblings().removeClass('bt-active')
+						$(this).addClass('bt-active');
+					});
+});
+
+</script>
 </body>
 </html>
