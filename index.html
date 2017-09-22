@@ -8,10 +8,80 @@
 <link href="css/bg-color.css" rel="stylesheet">
 
 <body>
+<div id="root">
+	<div id="note-container">
+		<article class="note-card" data-color="amber">
+			<header class="note-header">
+				<h1 class="note-title"> Note Title Note Title Note Title <br></h1>
+				<h4 class="note-date">09/21/2017 </h4>
+			</header>
+			<div class="note-content">
+				<p>
+					Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in. Ut vis eligendi mandamus necessitatibus, pro ne semper incorrupte. Ad vidit saepe labore nec, regione verterem partiendo eu eum. Per percipit gubergren concludaturque id, usu in esse error populo, sumo dolor has ad. At vim recusabo senserit, ne nonumes delectus convenire vel, errem tempor has ut.
+
+					Nam ne erant tamquam, pri probo autem ut. Ne sit nihil epicurei, dolor prompta atomorum at est. Ad essent indoctum his. Vix ex fastidii necessitatibus. Usu dicat commodo no. Velit erroribus mel et, ei aeterno impedit feugait his.
+
+					At mea sumo apeirian sententiae. Essent consetetur ut pri, graeci perfecto vel te, ignota facilis quaerendum sed ne. Ius te dignissim definitiones. Ex recteque gubergren nam. An eum assum dicant vocent. Mea appetere eleifend et, euismod admodum ius eu, esse fastidii nam et. Et tation cetero aperiam sea, diam concludaturque mel no.
+
+					Ex scripta vulputate qui, mel in elitr aperiri vocibus. Te luptatum argumentum qui, et his vitae vivendo quaerendum, malis officiis te eum. Te sed sint vulputate dissentias, ex elit inani nominati vis. Duo an alia constituam. Vim dolorum officiis ex, harum laudem delicatissimi no has, minim partem option in mea. Vis ut utroque philosophia, usu doming quodsi scriptorem no.
+				</p>
+			</div>
+		</article>
+		<article class="note-card" data-color="red">
+			<header class="note-header">
+				<h1 class="note-title"> Note Title Note Title Note Title <br></h1>
+				<h4 class="note-date">09/21/2017 </h4>
+			</header>
+			<div class="note-content">
+				<p>
+					Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in. Ut vis eligendi mandamus necessitatibus, pro ne semper incorrupte. Ad vidit saepe labore nec, regione verterem partiendo eu eum.
+				</p>
+			</div>
+		</article>
+		<article class="note-card" data-color="purple">
+			<header class="note-header">
+				<h1 class="note-title"> Note Title Note Title Note Title <br></h1>
+				<h4 class="note-date">09/21/2017 </h4>
+			</header>
+			<div class="note-content">
+				<p>
+					Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in.
+				</p>
+			</div>
+		</article>
+		<article class="note-card" data-color="teal">
+			<header class="note-header">
+				<h1 class="note-title"> Note Title Note Title Note Title <br></h1>
+				<h4 class="note-date">09/21/2017 </h4>
+			</header>
+			<div class="note-content">
+				<p>
+					Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in. Ut vis eligendi mandamus necessitatibus, pro ne semper incorrupte. Ad vidit saepe labore nec, regione verterem partiendo eu eum.
+				</p>
+			</div>
+		</article>
+		<article class="note-card" data-color="orange">
+			<header class="note-header">
+				<h1 class="note-title"> Note Title Note Title Note Title <br></h1>
+				<h4 class="note-date">09/21/2017 </h4>
+			</header>
+			<div class="note-content">
+				<p>
+					At mea sumo apeirian sententiae. Essent consetetur ut pri, graeci perfecto vel te, ignota facilis quaerendum sed ne. Ius te dignissim definitiones. Ex recteque gubergren nam. An eum assum dicant vocent. Mea appetere eleifend et, euismod admodum ius eu, esse fastidii nam et. Et tation cetero aperiam sea, diam concludaturque mel no.
+
+					Ex scripta vulputate qui, mel in elitr aperiri vocibus. Te luptatum argumentum qui, et his vitae vivendo quaerendum, malis officiis te eum. Te sed sint vulputate dissentias, ex elit inani nominati vis. Duo an alia constituam. Vim dolorum officiis ex, harum laudem delicatissimi no has, minim partem option in mea. Vis ut utroque philosophia, usu doming quodsi scriptorem no.
+				</p>
+			</div>
+		</article>
+	</div>
+
 	<nav id="bottombar">
 		<div id="njs-icon" class="bt-bottombar"> </div>
 		<div id="njs-text" class="bottom-container type-bold"> NoteJS </div>
 	</nav>
+
+	<div id="overlay" class="hidden"> </div>
+	<div id="x-sidebar-container"> </div>
 	<nav id="sidebar">
 		<ul>
 			<li id="setting" 	 class="bt-bar bt-sidebar" data-bt-name="setting"> 		</li>
@@ -21,62 +91,16 @@
 		<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"> </button>
 	</nav>
 
-	<div id="note-container">
-		<article class="note-card">
-			<h1 class="note-header">Note Title</h1>
-			<h4 class="note-date">	09/21/2017</h4>
-			<p class="note-content">
-				Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in. Ut vis eligendi mandamus necessitatibus, pro ne semper incorrupte. Ad vidit saepe labore nec, regione verterem partiendo eu eum. Per percipit gubergren concludaturque id, usu in esse error populo, sumo dolor has ad. At vim recusabo senserit, ne nonumes delectus convenire vel, errem tempor has ut.
-
-				Nam ne erant tamquam, pri probo autem ut. Ne sit nihil epicurei, dolor prompta atomorum at est. Ad essent indoctum his. Vix ex fastidii necessitatibus. Usu dicat commodo no. Velit erroribus mel et, ei aeterno impedit feugait his.
-
-				At mea sumo apeirian sententiae. Essent consetetur ut pri, graeci perfecto vel te, ignota facilis quaerendum sed ne. Ius te dignissim definitiones. Ex recteque gubergren nam. An eum assum dicant vocent. Mea appetere eleifend et, euismod admodum ius eu, esse fastidii nam et. Et tation cetero aperiam sea, diam concludaturque mel no.
-
-				Ex scripta vulputate qui, mel in elitr aperiri vocibus. Te luptatum argumentum qui, et his vitae vivendo quaerendum, malis officiis te eum. Te sed sint vulputate dissentias, ex elit inani nominati vis. Duo an alia constituam. Vim dolorum officiis ex, harum laudem delicatissimi no has, minim partem option in mea. Vis ut utroque philosophia, usu doming quodsi scriptorem no.
-			</p>
-
-		</article>
-		<article class="note-card bg-red">
-			<h1 class="note-header">Note Title</h1>
-			<h4 class="note-date">	09/21/2017</h4>
-			<p class="note-content">
-				Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero fastidii in. Ut vis eligendi mandamus necessitatibus, pro ne semper incorrupte. Ad vidit saepe labore nec, regione verterem partiendo eu eum. Per percipit gubergren concludaturque id, usu in esse error populo, sumo dolor has ad. At vim recusabo senserit, ne nonumes delectus convenire vel, errem tempor has ut.
-
-				Nam ne erant tamquam, pri probo autem ut. Ne sit nihil epicurei, dolor prompta atomorum at est. Ad essent indoctum his. Vix ex fastidii necessitatibus. Usu dicat commodo no. Velit erroribus mel et, ei aeterno impedit feugait his.
-			</p>
-
-		</article>
-		<article class="note-card bg-red">
-			<h1 class="note-header">Note Title</h1>
-			<h4 class="note-date">	09/21/2017</h4>
-			<p class="note-content">
-				Lorem ipsum dolor sit amet, ignota detracto eloquentiam pro an, soluta mediocrem sed in, eum dolor laoreet reprehendunt cu. Mel cetero 
-			</p>
-
-		</article>
-	</div>
-
+</div>
 <!--
 	<button id="add-note" class="bt-bar bt-sidebar bt-active" data-bt-name="add-note"></button>
 	<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"></button>
 -->
-<script src="js/clamp.min.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
   crossorigin="anonymous"></script>
 
-<script>
-
-$(function(){
-	$clamp($('p'), {clamp: 'auto'})
-	$(".bt-bar:not(.bt-active):not(#search-note)").on('click', function(){
-						method = $(this).attr("data-bt-name");
-						$(this).siblings().removeClass('bt-active')
-						$(this).addClass('bt-active');
-					});
-});
-
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
