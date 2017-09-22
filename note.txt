@@ -1,0 +1,17 @@
+div.note-container[data-color,id,position]
+	div.note-card
+		header.note-header
+			.note-title
+			.note-date
+		.note-content
+			p
+
+
+"<article class='note-card' data-id='" + i.id + 
+"' data-position = '" + i.position + 
+"' data-important='" + i.important + 
+"' data-color='" + i.color + 
+"'><header class='note-header'><h1 class='note-title'>" + i.title + 
+"<br></h1><h4 class='note-date'>" + i.date + 
+"</h4></header><div class='note-content'><p>" + i.content + 
+"</p></div></article>"
