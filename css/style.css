@@ -1,16 +1,42 @@
-* {
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	box-sizing: inherit;
 }
 #root {
 	overflow-y: scroll;
 	height: 100%;
 	width: 100%;
 }
-body, html {
-  height: 100%;
+
+.hidden { display: none; }
+
+*::-webkit-scrollbar {
+    width: 4px;
 }
+ 
+*::-webkit-scrollbar-track {
+    opacity: 0;
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.12);
+}
+
+#splashscreen {
+	position: fixed;
+	top: 0px; left: 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+
+
 
 body {
 	font-family: 'Roboto Mono', monospace;
@@ -50,7 +76,7 @@ nav#bottombar {
 	height: 100%;
 	width: 100%;
 	background: black;
-	opacity: 0.7;
+	opacity: 0.5;
 	transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -100,8 +126,17 @@ article.note-card {
   cursor: pointer;
 }
 
-article.note-card::after {
+article.note-card[data-important=true]::after {
 	content: "";
+	display: block;
+	position: absolute;
+	top: 0; right: 0;
+	background-image: url('../img/icon/white-star-icon.svg');
+	background-size: 48px;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 100px;
 }
 
 article.note-card:hover {
@@ -206,7 +241,6 @@ ul {
 	width: 100px;
   	opacity: 0;
   	transform: scale(0.8);
-  	
   	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   	z-index: -1;
 }
@@ -224,16 +258,66 @@ ul {
 
 }
 
-.hidden { display: none; }
 
-#root::-webkit-scrollbar {
-    width: 4px;
+
+
+#xside-container {
+	position: fixed;
+	top:0px;
+	right:100px;
+	height: 100%;
+	padding: 32px;
+	width: 600px;
+	min-width: 400px;
+	max-width: 100%;
+	background: #FAFAFA;
+	transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 }
- 
-#root::-webkit-scrollbar-track {
-    opacity: 0;
+#xside-container h1{
+	font-size: 32px;
 }
- 
-#root::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.12);
+
+#xside-container.hide {
+	transform: translateX(100%);
+}
+
+.xside-content{
+	opacity: 1;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.xside-content input, textarea {
+	display: block;
+	font: inherit;
+	border: none;
+	outline: none;
+	background: none;
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+#note-title {
+	font-size: 48px;
+}
+#note-content {
+	font-size: 24px;
+	min-height: 8em;
+	max-height: 400px;
+}
+.xside-content.hide {
+	position: absolute;
+	top: 0; left: 0;
+	opacity: 0;
+	z-index: -9999;
+}
+
+#xside-new ul {
+	display: block;
+	margin-top: -32px;
+	height: 100px;
+	width:  100%;
+}
+
+#xside-new ul li {
+	display: inline-block;
 }

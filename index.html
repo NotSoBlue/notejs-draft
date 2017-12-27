@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Icon Backdrop</title>
+	<title>NoteJS</title>
 </head>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/bg-color.css" rel="stylesheet">
 
 <body>
-<div id="root">
-	<div id="note-container"></div>
+	<div id="root">
+		<div id="note-container"></div>
 
-	<nav id="bottombar">
-		<div id="njs-icon" class="bt-bottombar"> </div>
-		<div id="njs-text" class="bottom-container type-bold"> NoteJS </div>
-	</nav>
+		<nav id="bottombar">
+			<div id="njs-icon" class="bt-bottombar"> </div>
+			<div id="njs-text" class="bottom-container type-bold"> NoteJS </div>
+		</nav>
 
-	<div id="overlay" class="hidden"> </div>
-	<div id="x-sidebar-container"> </div>
-	<nav id="sidebar">
-		<ul>
-			<li id="setting" 	 class="bt-bar bt-sidebar" data-bt-name="setting"> 		</li>
-			<li id="add-note" 	 class="bt-bar bt-sidebar" data-bt-name="add-note">		</li>
-			<li id="star-note" 	 class="bt-bar bt-sidebar" data-bt-name="star-note"> 	</li>
-		</ul>
-		<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"> </button>
-	</nav>
+		<div id="overlay"> </div>
+		<div id="xside-container">
+			<section id="xside-setting" class="xside-content hide" data-intent="setting">
+				<h1>Settings</h1>
+			</section>
+			<section id="xside-new" class="xside-content" data-intent="add-note">
+				<ul>
+					<li> Color </li>
+					<li> Important </li>
+					<li> </li>		
+				</ul>
+				<form id="" action="." method="post">
+					<input type="text" id="note-title" 
+									   class="xside-input-text"
+									   value="Title"
+									   name="title"
+									   data-color="blue"
+									   autocomplete="off">
+					<textarea id="note-content" 
+							  name="note-content" 
+							  rows="8" 
+							  autocomplete="off">Notes goes Here..</textarea>
+					<input type="submit" id="note-add" value="Add">
+				</form>
+			</section>
+		</div>
+		<nav id="sidebar">
+			<ul>
+				<li id="setting" 	 class="bt-bar bt-sidebar" data-bt-name="setting"> 		</li>
+				<li id="add-note" 	 class="bt-bar bt-sidebar" data-bt-name="add-note">		</li>
+				<li id="star-note" 	 class="bt-bar bt-sidebar" data-bt-name="star-note"> 	</li>
+			</ul>
+			<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"> </button>
+		</nav>
+	</div>
+	<!--
+		<button id="add-note" class="bt-bar bt-sidebar bt-active" data-bt-name="add-note"></button>
+		<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"></button>
+	-->
+	<div id="delete-after-load" style="background:white;height:100%;width:100%;position:fixed;top:0;left:0;"> </div>
+	<div id="splashscreen"></div>
+	<script src="js/bodymovin.min.js"></script>
+	<script src="js/autosize.min.js"></script>
 
-</div>
-<!--
-	<button id="add-note" class="bt-bar bt-sidebar bt-active" data-bt-name="add-note"></button>
-	<button id="search-note" class="bt-bar bt-sidebar" data-bt-name="search-note"></button>
--->
-<script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-  crossorigin="anonymous"></script>
-
-<script src="js/script.js"></script>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>

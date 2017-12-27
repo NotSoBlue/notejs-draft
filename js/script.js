@@ -20,9 +20,6 @@ var bgColor = [
 				"grey",
 				"blue-grey"
 ];
-
-
-
 var sampleNote = [
 				{
 					id: 1,
@@ -39,20 +36,20 @@ var sampleNote = [
 					important: true,
 					title: "Title goes here",
 					date: "9/22/2017",
-					content:"hi mudafukas <br> hello world",
+					content:"hi world <br> hello world",
 				},
 	];
 
 function generateNoteCard(obj, container = "#note-container") {
 	var noteContainer = $(container);
-	var favorite = "";
-	var noteContent = "";
-	var stringHolder = ""
+	var favorite = "",
+		noteContent = "",
+		stringHolder = "";
 	for(var i in obj) {
 		stringHolder =  "<article class='note-card' data-id='" + obj[i].id + 
 						"' data-position = '" + obj[i].position + 
 						"' data-important='" + obj[i].important + 
-						"' data-color='" + bgColor[obj[i].color] + 
+						"' data-bg-color='" + bgColor[obj[i].color] + 
 						"'><header class='note-header'><h1 class='note-title'>" + obj[i].title + 
 						"<br></h1><h4 class='note-date'>" + obj[i].date + 
 						"</h4></header><div class='note-content'><p>" + obj[i].content + 
@@ -63,19 +60,69 @@ function generateNoteCard(obj, container = "#note-container") {
 	noteContainer.html(favorite += noteContent);
 }
 
+function toggleOverlay(element, overlay, container, method = 'hide') {
+	if(element.hasClass('bt-active'))	{
+		element.removeClass('bt-active');
+		container.addClass("hide");
+		overlay.hide();
+	} else {
+		element.siblings()
+			   .removeClass('bt-active');
+		element.addClass('bt-active');
+		if(method !== "star-note")	{
+			container.removeClass("hide");
+			overlay.show();
+		} else {
+			container.addClass("hide");
+			overlay.hide();
+		}
+	}
+}
 
 $(function(){
 	var noteTitle = $("h1.note-title");
+	var xscontainer = $("#xside-container");
+	var overlay   = $("#overlay");
+	$("#delete-after-load").remove();
+	
+	// Initializing Stuff
+	overlay.hide();
+	xscontainer.addClass("hide");
 	noteTitle.attr('title', noteTitle.text());
-	$(".bt-bar:not(#search-note)").on('click', function(){
-						method = $(this).attr("data-bt-name");
-						if($(this).hasClass('bt-active'))	{
-							$(this).removeClass('bt-active')
-						} else {
-							$(this).siblings().removeClass('bt-active')
-							$(this).addClass('bt-active');
-						}
-					});
+	// Autoresize textarea
+	autosize($('textarea'));
 
+
+	// Getting DOM reference
+	var eSplash = document.getElementById("splashscreen");
+	// Getting Data
+	var adSplash = {
+        container: eSplash,
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        },
+        path: 'js/splash.json'
+    }
+    // Creating instance
+    var animSplash = bodymovin.loadAnimation(adSplash);
+    // Playing it
+    animSplash.play();
+    // Delete element after play
+    animSplash.onComplete = function() {
+    	$("#splashscreen").remove();
+    };
+
+	
+	$(".bt-bar:not(#search-note)").on('click', function(){
+						var method = $(this).attr("data-bt-name");
+						toggleOverlay($(this), overlay, xscontainer, method);
+
+					});
+	$("#overlay, #search-note").on('click', function() {
+						$('.bt-bar.bt-active').click();
+					});
 	generateNoteCard(sampleNote);
 });
