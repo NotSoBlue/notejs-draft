@@ -104,7 +104,7 @@ $(function(){
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
         },
-        path: 'splash.json'
+        path: 'js/splash.json'
     }
     // Creating instance
     var animSplash = bodymovin.loadAnimation(adSplash);
